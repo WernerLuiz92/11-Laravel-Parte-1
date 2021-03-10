@@ -1,0 +1,7 @@
+Nesta aula, aprendemos: 
+
+
+-> Uma introdução ao Laravel
+-> A configuração do ambiente para rodar o Laravel
+-> Uma rápida introdução aos diretórios do projeto
+-> A criação da primeira rota com Laravel, utilizando uma função anônima
