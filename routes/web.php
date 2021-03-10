@@ -18,3 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/series', 'App\Http\Controllers\SeriesController@index');
+
+Route::get('/series/create', function () {
+    return view('series.create', [
+        'title' => 'Nova Série',
+    ]);
+});
