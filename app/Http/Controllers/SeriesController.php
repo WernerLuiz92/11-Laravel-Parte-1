@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\FlashMessage;
 use App\Models\Serie;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SeriesController extends Controller
 {
@@ -28,18 +30,22 @@ class SeriesController extends Controller
         ));
     }
 
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         $title = $request->title;
         $releaseDate = $request->releaseDate;
         $endDate = $request->endDate;
 
-        $serie = new Serie();
+        $serie = Serie::create([
+            'title' => $title,
+            'releaseDate' => $releaseDate,
+            'endDate' => $endDate,
+        ]);
 
-        $serie->title = $title;
-        $serie->releaseDate = $releaseDate;
-        $serie->endDate = $endDate;
+        FlashMessage::setFlashMessage('success', "Série {$serie->title} foi criada com o ID #{$serie->id}", true);
 
-        var_dump($serie->save());
+        return new Response('', 302, [
+            'Location' => '/series',
+        ]);
     }
 }

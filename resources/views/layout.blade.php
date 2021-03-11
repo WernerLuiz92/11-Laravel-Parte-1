@@ -74,7 +74,7 @@
             $(".auto-close").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove(); 
             });
-        }, 3000);
+        }, 4000);
     </script>
 </body>
 </html>
