@@ -16,8 +16,8 @@ class CreateTableSeries extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->date('release-year');
-            $table->date('end-year');
+            $table->date('releaseDate')->nullable();
+            $table->date('endDate')->nullable();
             $table->timestamps();
         });
     }

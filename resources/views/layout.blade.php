@@ -13,7 +13,7 @@
     {{-- Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <title>{{ $title ?? 'Laravel MVC' }}</title>
+    <title>{{ $pageTitle ?? 'Laravel MVC' }}</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -52,9 +52,17 @@
         </div>
     </nav>
     <div class="container mt-5">
-        <div class="bg-secondary bg-gradient p-4 text-black-50 mb-2">
-            <h1>{{ $title ?? 'Laravel MVC' }}</h1>
-        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">{{ $pageTitle ?? '' }}</li>
+            </ol>
+        </nav>
+        @if (isset($_SESSION['message']) && $_SESSION['position'] == 'header')
+            <div class="alert alert-{{ $_SESSION['message_type'] }} alert-dismissible fade show" role="alert">
+                <strong>{{ $_SESSION['strong_message'] ?? '' }}</strong> {{ $_SESSION['message'] ?? '' }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>   
+        @endif
 
         @yield('content')
     </div>
@@ -66,7 +74,8 @@
             $(".auto-close").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove(); 
             });
-        }, 2000);
+        }, 3000);
     </script>
 </body>
 </html>
+<?php App\Http\Middleware\FlashMessage::unsetFlashMessage(); ?>
