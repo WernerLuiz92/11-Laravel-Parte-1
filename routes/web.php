@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Middleware\FlashMessage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    FlashMessage::setFlashMessage('danger', 'Olá, deu certo', true);
-
-    return view('home');
-});
+Route::get('/', 'App\Http\Controllers\Home@index');
 
 Route::get('/series', 'App\Http\Controllers\SeriesController@index');
 
