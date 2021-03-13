@@ -26,21 +26,21 @@
             <div class="collapse navbar-collapse" id="navbarsExample04">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Página Inicial</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/series" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Gêneros</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                        <li><a class="dropdown-item" href="#">Terror</a></li>
+                        <li><a class="dropdown-item" href="#">Comédia</a></li>
+                        <li><a class="dropdown-item" href="#">Ação</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/series">Listar Séries</a>
+                    <a class="nav-link" href="/series">Séries</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/series/create">Nova Série</a>
-                </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
                 </li>
             </ul>
             <ul class="navbar-nav me-1 mb-2 mb-md-0">
@@ -48,22 +48,25 @@
                     <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
+            <div class="search-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar uma série" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                    </div>
+            </div>
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
+    {{-- Chama a Flash Message --}}
+    <x-alert/>
+    <div class="container mt-2">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">{{ $pageTitle ?? '' }}</li>
             </ol>
         </nav>
-        @if (isset($_SESSION['message']) && $_SESSION['position'] == 'header')
-            <div class="alert alert-{{ $_SESSION['message_type'] }} alert-dismissible fade show" role="alert">
-                <strong>{{ $_SESSION['strong_message'] ?? '' }}</strong> {{ $_SESSION['message'] ?? '' }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>   
-        @endif
-
+    </div>
+    <div class="container mt-2">
         @yield('content')
     </div>
     {{-- Bootstrap Bundle JS --}}
@@ -76,6 +79,22 @@
             });
         }, 4000);
     </script>
+    <script>
+    var option = {
+        animation : true,
+        delay : 5000,
+        autohide : true,
+    }
+    var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+    var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, option);
+    });
+
+    $(window).on("load", function(){
+        toastList.forEach(toast => {
+            toast.show();
+        });
+    })
+    </script>
 </body>
 </html>
-<?php App\Http\Middleware\FlashMessage::unsetFlashMessage(); ?>

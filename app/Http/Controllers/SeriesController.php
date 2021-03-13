@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\FlashMessage;
 use App\Models\Serie;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Redirect;
 
 class SeriesController extends Controller
 {
@@ -15,9 +15,12 @@ class SeriesController extends Controller
 
         $pageTitle = 'Lista de Séries';
 
+        $dir = __DIR__;
+
         return view('series/index', compact(
             'series',
-            'pageTitle'
+            'pageTitle',
+            'dir',
         ));
     }
 
@@ -30,7 +33,7 @@ class SeriesController extends Controller
         ));
     }
 
-    public function store(Request $request): Response
+    public function store(Request $request)
     {
         $title = $request->title;
         $releaseDate = $request->releaseDate;
@@ -42,10 +45,8 @@ class SeriesController extends Controller
             'endDate' => $endDate,
         ]);
 
-        FlashMessage::setFlashMessage('success', "Série {$serie->title} foi criada com o ID #{$serie->id}", true);
+        FlashMessage::setFlashMessage('success', "Série {$serie->title} foi criada com o ID #{$serie->id}");
 
-        return new Response('', 302, [
-            'Location' => '/series',
-        ]);
+        return redirect('/series');
     }
 }

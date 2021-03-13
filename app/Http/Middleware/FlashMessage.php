@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-class FlashMessage
+trait FlashMessage
 {
     /**
      * Envia os dados para uma Flash Message.
@@ -17,27 +17,21 @@ class FlashMessage
      *                                 Padrão -> 'header'
      *                                 Opção -> 'login'
      */
-    public static function setFlashMessage(string $type, string $message, bool $autoClose = false, string $strongMessage = '', string $position = 'header')
+    public static function setFlashMessage(string $type, string $message, string $strongMessage = '')
     {
-        $_SESSION['position'] = $position;
-        $_SESSION['strong_message'] = $strongMessage;
-        $_SESSION['message'] = $message;
-        if ($autoClose === true) {
-            $_SESSION['message_type'] = $type.' auto-close';
-
-            return;
-        }
-        $_SESSION['message_type'] = $type;
+        session([
+            'strong_message' => $strongMessage,
+            'message' => $message,
+            'type' => $type,
+        ]);
     }
 
-    /**
-     *  Remove a flash Message.
-     */
     public static function unsetFlashMessage()
     {
-        unset($_SESSION['position']);
-        unset($_SESSION['strong_message']);
-        unset($_SESSION['message']);
-        unset($_SESSION['message_type']);
+        session()->forget([
+            'strong_message',
+            'message',
+            'type',
+        ]);
     }
 }
