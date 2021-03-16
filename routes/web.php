@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Home@index');
+Route::get('/', 'App\Http\Controllers\Home@index')
+    ->name('home.index');
 
-Route::get('/series', 'App\Http\Controllers\SeriesController@index');
+Route::get('/series', 'App\Http\Controllers\SeriesController@index')
+    ->name('series.index');
 
-Route::get('/series/create', 'App\Http\Controllers\SeriesController@create');
+Route::get('/series/create', 'App\Http\Controllers\SeriesController@create')
+    ->name('series.create');
 
-Route::post('/series/create', 'App\Http\Controllers\SeriesController@store');
+Route::post('/series/{id}', 'App\Http\Controllers\SeriesController@store')
+    ->name('series.store');
+
+Route::delete('/series/{id}', 'App\Http\Controllers\SeriesController@destroy')
+    ->name('series.destroy');
+
+Route::put('/series/{id}', 'App\Http\Controllers\SeriesController@update')
+    ->name('series.update');

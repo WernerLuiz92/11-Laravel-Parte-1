@@ -17,7 +17,7 @@ class SeriesController extends Controller
 
         $dir = __DIR__;
 
-        return view('series/index', compact(
+        return view('series.index', compact(
             'series',
             'pageTitle',
             'dir',
@@ -28,9 +28,14 @@ class SeriesController extends Controller
     {
         $pageTitle = 'Nova Série';
 
-        return view('series.create', compact(
-            'pageTitle'
-        ));
+        return view('series.create', compact('pageTitle'));
+    }
+
+    public function update()
+    {
+        $pageTitle = 'Alterar série';
+
+        return view('series.create', compact('pageTitle'));
     }
 
     public function store(Request $request)
@@ -47,6 +52,15 @@ class SeriesController extends Controller
 
         FlashMessage::setFlashMessage('success', "Série {$serie->title} foi criada com o ID #{$serie->id}");
 
-        return redirect('/series');
+        return redirect()->route('series.index');
+    }
+
+    public function destroy(Request $request)
+    {
+        Serie::destroy($request->id);
+
+        FlashMessage::setFlashMessage('danger', 'Série foi removida com sucesso!');
+
+        return redirect()->route('series.index');
     }
 }
