@@ -11,4 +11,9 @@ class Serie extends Model
         'releaseDate',
         'endDate',
     ];
+
+    public function seasons()
+    {
+        return $this->hasMany(Season::class);
+    }
 }
