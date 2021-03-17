@@ -1,5 +1,5 @@
 Nesta aula, aprendemos: 
 
 
--> 
-    => 
+-> Como validar os dados recebidos pelo Request do formulário de criação de série
+-> Como extrair as regras de validação para uma classe de Form Request
