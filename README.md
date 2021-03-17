@@ -5,23 +5,28 @@
 Este curso é dividido em 3 partes, cada parte está em uma das branchs deste repositório.
 
 ## Parte 1 - Produtividade no desenvolvimento web
+### O que aprendemos?
+- Entendemos o padrão MVC com Laravel
+- Usar o ORM Eloquent para persistir dados
+- Trabalhar com formulários e validação
+- Ganhar produtividade no desenvolvimento web
+- Usar o Blade para a definição dos Views
 
-### Conhecendo o Laravel
+## Parte 2 - Trabalhando com Autenticação, Relacionamentos e Testes
+### O que aprendemos?
+- Proteger as páginas e trabalhar com autenticação
+- Como lidar com requisições AJAX
+- Criar relacionamento no modelo e atualizar o banco através de migrations
+- Aplicar boas práticas e refatorar o código
+- Testar as rotas e controllers com testes automatizados
 
-- Introdução
-- Preparando o ambiente
-- Introdução ao Laravel
-- Rotas no Laravel
-
-### MVC - Controllers
-
-- Introdução ao MVC
-- Significado de MVC
-- Para saber mais: MVC na web e o ADR
-- Roteando para um Controller
-- Controller
-- Aprendendo a lidar com o Request
-- Injeção de dependências
+## Parte 3 - Eventos, filas, upload e e-mail
+### O que aprendemos?
+- Como enviar e-mails.
+- Usar filas para o processamento assíncrono.
+- Notificar e desacoplar código com eventos.
+- Como funciona o upload e persistência de arquivos.
+- Trabalhar com Jobs na aplicação.
 
 ## License
 
