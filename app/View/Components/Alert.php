@@ -23,13 +23,19 @@ class Alert extends Component
      */
     public function render()
     {
-        if (session('message') !== null) {
+        if (session('message') !== null || session('errors') !== null) {
             $type = session('type');
             $strongMessage = session('strong_message');
             $message = session('message');
+            $autoClose = session('autoClose');
             FlashMessage::unsetFlashMessage();
 
-            return view('components.alert', compact('type', 'strongMessage', 'message'));
+            return view('components.alert', [
+                'type' => $type,
+                'strongMessage' => $strongMessage,
+                'message' => $message,
+                'autoClose' => $autoClose,
+            ]);
         }
     }
 }

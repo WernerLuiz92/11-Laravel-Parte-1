@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\FlashMessage;
+use App\Http\Requests\SeriesFormRequest;
 use App\Models\Serie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -38,7 +39,7 @@ class SeriesController extends Controller
         return view('series.create', compact('pageTitle'));
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
         $title = $request->title;
         $releaseDate = $request->releaseDate;

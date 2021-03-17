@@ -8,7 +8,7 @@ class Home extends Controller
 {
     public function index()
     {
-        FlashMessage::setFlashMessage('info', 'Seja muito bem-vindo(a)!', 'Olá!!');
+        FlashMessage::setFlashMessage('info', 'Olá!! Seja muito bem-vindo(a)!');
 
         return view('home');
     }

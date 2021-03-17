@@ -77,7 +77,7 @@
         var option = {
             animation : true,
             delay : 5000,
-            autohide : true,
+            autohide : autoClose,
         }
         var toastElList = [].slice.call(document.querySelectorAll(".toast"));
         var toastList = toastElList.map(function (toastEl) {

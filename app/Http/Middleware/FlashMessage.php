@@ -10,19 +10,18 @@ trait FlashMessage
      * @param string -> $type          Tipo da mensagem, aplica classes bootstrap.
      *                                 primary | secondary | success | danger | warning | info | light | dark
      * @param string -> $message       Texto da mensagem
-     * @param bool   -> $autoClose     Define se a mensagem fechará automaticamente após 3s
+     * @param string -> $autoClose     Define se a mensagem fechará automaticamente após 3s
+     *                                 padrão = 'true' | opcional 'false'
      * @param string -> $strongMessage Início da mensagem em negrito
      *                                 opcional
-     * @param string -> $position      Define a localização onde a mensagem deve ser exibida
-     *                                 Padrão -> 'header'
-     *                                 Opção -> 'login'
      */
-    public static function setFlashMessage(string $type, string $message, string $strongMessage = '')
+    public static function setFlashMessage(string $type, string $message, string $autoClose = 'true', string $strongMessage = '')
     {
         session([
             'strong_message' => $strongMessage,
             'message' => $message,
             'type' => $type,
+            'autoClose' => $autoClose,
         ]);
     }
 
@@ -32,6 +31,7 @@ trait FlashMessage
             'strong_message',
             'message',
             'type',
+            'autoClose',
         ]);
     }
 }
