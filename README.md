@@ -4,6 +4,25 @@
 
 Este curso é dividido em 3 partes, cada parte está em uma das branchs deste repositório.
 
+## Parte 1 - Produtividade no desenvolvimento web
+
+### Conhecendo o Laravel
+
+- Introdução
+- Preparando o ambiente
+- Introdução ao Laravel
+- Rotas no Laravel
+
+### MVC - Controllers
+
+- Introdução ao MVC
+- Significado de MVC
+- Para saber mais: MVC na web e o ADR
+- Roteando para um Controller
+- Controller
+- Aprendendo a lidar com o Request
+- Injeção de dependências
+
 ## License
 
 Este curso está sob licença [MIT](https://opensource.org/licenses/MIT).
