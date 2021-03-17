@@ -12,6 +12,61 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Ganhar produtividade no desenvolvimento web
 - Usar o Blade para a definição dos Views
 
+### Aulas
+#### Conhecendo o Laravel
+- Introdução
+- Preparando o ambiente
+- Introdução ao Laravel
+- Rotas no Laravel
+
+#### MVC - Controllers
+- Introdução ao MVC
+- Significado de MVC
+- Para saber mais: MVC na web e o ADR
+- Roteando para um Controller
+- Controller
+- Aprendendo a lidar com o Request
+- Injeção de dependências
+
+#### MVC - View
+- View em PHP
+- Camada de View
+- Estilizando a View
+- Para saber mais: Bootstrap
+- Misturando PHP com HTML
+- Introdução ao Blade
+- Separando o código em comum das nossa páginas
+
+#### MVC - Model
+- Criando a base de dados
+- Para saber mais: SGBD utilizado
+- Migrations
+- Vantagens das migrations
+- Eloquent ORM
+- Vantagens de um ORM
+- Buscando as séries no banco
+- Buscando séries
+- Para saber mais: Eloquent
+
+#### Lapidando a aplicação
+- Tipos de resposta
+- Redirecionando um usuário
+- Session e flash messages
+- Sessão HTTP
+- Excluindo uma série
+- POST ou DELETE?
+- Rotas nomeadas
+- Definindo o nome de uma rota
+
+#### Validando os dados
+- Validando o Request
+- Validação dos dados
+- Criando um Form Request
+- Vantagens do Form Request
+- Consolidando o seu conhecimento
+- Projeto do curso
+- Conclusão
+
 ## Parte 2 - Trabalhando com Autenticação, Relacionamentos e Testes
 ### O que aprendemos?
 - Proteger as páginas e trabalhar com autenticação
