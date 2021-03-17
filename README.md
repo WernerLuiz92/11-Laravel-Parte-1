@@ -12,14 +12,14 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Ganhar produtividade no desenvolvimento web
 - Usar o Blade para a definição dos Views
 
-## Aulas
-### Conhecendo o Laravel
+### Aulas
+#### Conhecendo o Laravel
 - Introdução
 - Preparando o ambiente
 - Introdução ao Laravel
 - Rotas no Laravel
 
-### MVC - Controllers
+#### MVC - Controllers
 - Introdução ao MVC
 - Significado de MVC
 - Para saber mais: MVC na web e o ADR
@@ -28,7 +28,7 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Aprendendo a lidar com o Request
 - Injeção de dependências
 
-### MVC - View
+#### MVC - View
 - View em PHP
 - Camada de View
 - Estilizando a View
@@ -37,7 +37,7 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Introdução ao Blade
 - Separando o código em comum das nossa páginas
 
-### MVC - Model
+#### MVC - Model
 - Criando a base de dados
 - Para saber mais: SGBD utilizado
 - Migrations
@@ -48,7 +48,7 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Buscando séries
 - Para saber mais: Eloquent
 
-### Lapidando a aplicação
+#### Lapidando a aplicação
 - Tipos de resposta
 - Redirecionando um usuário
 - Session e flash messages
@@ -58,7 +58,7 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Rotas nomeadas
 - Definindo o nome de uma rota
 
-### Validando os dados
+#### Validando os dados
 - Validando o Request
 - Validação dos dados
 - Criando um Form Request
