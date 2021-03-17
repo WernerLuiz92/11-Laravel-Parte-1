@@ -1,9 +1,5 @@
 Nesta aula, aprendemos: 
 
-
--> 
-    =>
-
 -> Como gerar um modelo na linha de comando (php artisan make:model)
 -> Que a flag -m, do comando make:model, também gera as migrations, por exemplo:
     => php artisan make:model Temporada -m
