@@ -75,6 +75,39 @@ Este curso é dividido em 3 partes, cada parte está em uma das branchs deste re
 - Aplicar boas práticas e refatorar o código
 - Testar as rotas e controllers com testes automatizados
 
+### Aulas
+#### Relacionamentos no modelo
+- Introdução
+- Preparando o ambiente
+- Criando os relacionamentos
+- Relacionamentos
+- Migrations
+- Migrations e SGBDs
+- Para saber mais: Doctrine
+
+#### Novo controller e View
+- Salvando episódios e temporadas
+- Exibindo as temporadas de uma série
+- Buscando temporadas
+
+#### Usando serviços para exclusão
+- 
+
+#### Edição da série
+- 
+
+#### Assistindo episódios
+- 
+
+#### Autenticando o usuário
+- 
+
+#### Protegendo rotas e ações
+- 
+
+#### Testes automatizados
+- 
+
 ## Parte 3 - Eventos, filas, upload e e-mail
 ### O que aprendemos?
 - Como enviar e-mails.
