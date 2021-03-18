@@ -57,7 +57,7 @@ class SeriesController extends Controller
 
             $qtdEpisodes = $request->qtdEpisodes;
             for ($j = 1; $j <= $qtdEpisodes; ++$j) {
-                $season->espisodes()->create(['number' => $j]);
+                $season->episodes()->create(['number' => $j]);
             }
         }
 
