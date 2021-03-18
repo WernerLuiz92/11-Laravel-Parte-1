@@ -26,7 +26,6 @@ class SeriesFormRequest extends FormRequest
         return [
             'title' => 'required|min:3',
             'releaseDate' => 'required',
-            'endDate' => 'required',
         ];
     }
 
