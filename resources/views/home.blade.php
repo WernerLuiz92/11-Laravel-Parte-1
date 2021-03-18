@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div id="carouselExampleControls mt-5" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img src="https://w.wallhaven.cc/full/z8/wallhaven-z885vv.png" class="d-block w-100" alt="...">
