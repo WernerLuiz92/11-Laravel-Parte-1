@@ -22,6 +22,9 @@ Route::get('/series', 'App\Http\Controllers\SeriesController@index')
 Route::get('/series/create', 'App\Http\Controllers\SeriesController@create')
     ->name('series.create');
 
+Route::get('/series/{id}/seasons', 'App\Http\Controllers\SeasonsController@index')
+    ->name('seasons.index');
+
 Route::post('/series/{id}', 'App\Http\Controllers\SeriesController@store')
     ->name('series.store');
 
