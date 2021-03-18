@@ -19,6 +19,7 @@ class CreateSeasonsTable extends Migration
             $table->integer('number');
             $table->date('releaseDate')->nullable();
             $table->date('endDate')->nullable();
+            $table->timestamps();
 
             $table->foreign('serie_id')
                 ->references('id')

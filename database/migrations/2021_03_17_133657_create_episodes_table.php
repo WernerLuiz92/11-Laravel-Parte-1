@@ -19,6 +19,7 @@ class CreateEpisodesTable extends Migration
             $table->integer('number');
             $table->string('title')->nullable();
             $table->date('releaseDate')->nullable();
+            $table->timestamps();
 
             $table->foreign('season_id')
                 ->references('id')

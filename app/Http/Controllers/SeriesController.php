@@ -51,7 +51,17 @@ class SeriesController extends Controller
             'endDate' => $endDate,
         ]);
 
-        FlashMessage::setFlashMessage('success', "Série {$serie->title} foi criada com o ID #{$serie->id}");
+        $qtdSeasons = $request->qtdSeasons;
+        for ($i = 1; $i <= $qtdSeasons; ++$i) {
+            $season = $serie->seasons()->create(['number' => $i]);
+
+            $qtdEpisodes = $request->qtdEpisodes;
+            for ($j = 1; $j <= $qtdEpisodes; ++$j) {
+                $season->espisodes()->create(['number' => $j]);
+            }
+        }
+
+        FlashMessage::setFlashMessage('success', "Série {$serie->title}, temporadas e episódios foram criados com sucesso!");
 
         return redirect()->route('series.index');
     }
