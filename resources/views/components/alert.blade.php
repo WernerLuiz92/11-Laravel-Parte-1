@@ -1,4 +1,4 @@
-<div class="position-relative top-0 mt-2 me-2">
+<div class="position-relative top-0 mt-3 me-3">
     <div class="position-absolute top-0 end-0" style="z-index: 5">
         <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
         @if ($errors->any())
@@ -30,3 +30,24 @@
         </div>
     </div>
 </div>
+
+@section('alert')
+{{-- Toast Initialize --}}
+<script>
+    var option = {
+        animation : true,
+        delay : 5000,
+        autohide : autoClose,
+    }
+    var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+    var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, option);
+    });
+
+    $(window).on("load", function(){
+        toastList.forEach(toast => {
+            toast.show();
+        });
+    })
+</script>
+@endsection

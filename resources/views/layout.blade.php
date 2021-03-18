@@ -60,35 +60,18 @@
     </nav>
     {{-- Chama a Flash Message --}}
     <x-alert/>
-    <div class="container mt-2">
+    <div class="container mt-3">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">{{ $pageTitle ?? '' }}</li>
             </ol>
         </nav>
     </div>
-    <div class="container mt-2">
+    <div class="container mt-3">
         @yield('content')
     </div>
     {{-- Bootstrap Bundle JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    {{-- Toast Initialize --}}
-    <script>
-        var option = {
-            animation : true,
-            delay : 5000,
-            autohide : autoClose,
-        }
-        var toastElList = [].slice.call(document.querySelectorAll(".toast"));
-        var toastList = toastElList.map(function (toastEl) {
-            return new bootstrap.Toast(toastEl, option);
-        });
-
-        $(window).on("load", function(){
-            toastList.forEach(toast => {
-                toast.show();
-            });
-        })
-    </script>
+    @yield('alert')
 </body>
 </html>
