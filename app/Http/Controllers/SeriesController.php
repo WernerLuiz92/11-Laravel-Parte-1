@@ -34,6 +34,15 @@ class SeriesController extends Controller
         return view('series.create', compact('pageTitle'));
     }
 
+    public function titleUpdate(int $id, Request $request)
+    {
+        $title = $request->title;
+        $serie = Serie::find($id);
+
+        $serie->title = $title;
+        $serie->save();
+    }
+
     public function update()
     {
         $pageTitle = 'Alterar série';

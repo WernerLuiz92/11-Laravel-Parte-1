@@ -28,6 +28,8 @@ Route::get('/series/{id}/seasons', 'App\Http\Controllers\SeasonsController@index
 Route::post('/series/{id}', 'App\Http\Controllers\SeriesController@store')
     ->name('series.store');
 
+Route::post('/series/{id}/titleUpdate', 'App\Http\Controllers\SeriesController@titleUpdate');
+
 Route::delete('/series/{id}', 'App\Http\Controllers\SeriesController@destroy')
     ->name('series.destroy');
 
