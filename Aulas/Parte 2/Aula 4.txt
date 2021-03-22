@@ -1,5 +1,1 @@
-Nesta aula, aprendemos: 
-
-
--> 
-    =>
+Nesta aula, aprendemos como usar o JavaScript (Fetch API) para enviar uma requisição e manipular o HTML programaticamente (DOM).
