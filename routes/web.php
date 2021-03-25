@@ -25,6 +25,9 @@ Route::get('/series/create', 'App\Http\Controllers\SeriesController@create')
 Route::get('/series/{id}/seasons', 'App\Http\Controllers\SeasonsController@index')
     ->name('seasons.index');
 
+Route::get('/seasons/{id}/episodes', 'App\Http\Controllers\EpisodesController@index')
+    ->name('episodes.index');
+
 Route::post('/series/{id}', 'App\Http\Controllers\SeriesController@store')
     ->name('series.store');
 
