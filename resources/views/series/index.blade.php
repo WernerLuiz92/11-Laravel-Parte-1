@@ -45,8 +45,8 @@
                                 <i class="bi bi-pencil"></i>
                             </button>
                         </td>
-                        <td>{{ $serie->releaseDate }}</td>
-                        <td>{{ $serie->endDate ?? 'Presente' }}</td>
+                        <td>{{ date('d/m/Y', strtotime($serie->releaseDate)) }}</td>
+                        <td>{{ $serie->endDate ? date('d/m/Y', strtotime($serie->endDate)) : 'Presente' }}</td>
                         <td>
                             <div class="d-flex justify-content-evenly">
                                 <a href="{{ route('seasons.index', $serie->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-up-right"></i></a>
